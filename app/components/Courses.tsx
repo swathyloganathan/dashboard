@@ -26,7 +26,7 @@ export default function Courses() {
       variants={{ visible: { transition: { staggerChildren: 0.05 } } }}
     >
       <h1 className="text-3xl pt-5">Active Courses</h1>
-      <div className="mt-5 grid grid-cols-3 gap-4">
+      <div className="mt-5 grid lg:grid-cols-3 md:grid-cols-1  gap-4 ">
         {loading ? (
           <ThreeDots
             height="80"
