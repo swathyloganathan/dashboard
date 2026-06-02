@@ -1,16 +1,16 @@
 import Link from "next/link";
-import Course from "./components/Course";
+import Courses from "./components/Courses";
 import { Navbar } from "./components/Navbar";
-import { X } from "lucide-react";
+import { X , ListCollapse} from "lucide-react";
 export default function Home() {
   return (
     <>
       <Navbar />
       <div className="flex">
-        <aside className="relative w-40 text-black bg-gray-500 dark:text-white  dark:bg-black rounded-xl border-2 h-svh">
-          {/* <ListCollapse  className="absolute top-1 right-1 cursor-pointer"/> */}
-          <X className="absolute top-1 right-1 cursor-pointer" />
-          <Link href="/">Home</Link>
+        <aside className="relative w-10 text-black bg-gray-500 dark:text-white  dark:bg-black rounded-xl border-2 h-svh">
+          <ListCollapse  className="absolute top-1 right-1 cursor-pointer"/>
+          {/* <X className="absolute top-1 right-1 cursor-pointer" /> */}
+          
           
         </aside>
         <div className="flex-auto p-10">
@@ -23,14 +23,7 @@ export default function Home() {
               Welcome back Swathy !
             </p>
           </section>
-          <section>
-            <h1 className="text-3xl pt-5">Active Courses</h1>
-            <div className="grid grid-cols-2 gap-4">
-              <Course>React fundamentals and Advanced</Course>
-              <Course>Learn NextJs</Course>
-              <Course>Learn MERN Stack</Course>
-            </div>
-          </section>
+          <Courses />
         </div>
       </div>
     </>
