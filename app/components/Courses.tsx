@@ -2,8 +2,9 @@
 import { Suspense, useEffect, useState } from "react";
 import { supabase } from "../lib/supabase";
 import Course from "./Course";
+import { CourseType } from "../lib/definitions";
 export default function Courses() {
-  const [courses, setCourses] = useState([]);
+  const [courses, setCourses] = useState<CourseType[]>([]);
 //   const [loading, SetLoading] = useState(true);
   useEffect(() => {
     fetchCourses();
