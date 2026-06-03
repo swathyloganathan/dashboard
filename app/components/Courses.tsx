@@ -22,11 +22,20 @@ export default function Courses() {
     setCourses(data);
   };
   return (
-    <motion.ul
-      variants={{ visible: { transition: { staggerChildren: 0.05 } } }}
-    >
+    <main>
       <h1 className="text-3xl pt-5">Active Courses</h1>
-      <div className="mt-5 grid lg:grid-cols-3 md:grid-cols-1  gap-4 ">
+      <motion.div
+        className="mt-5 grid lg:grid-cols-3 md:grid-cols-1  gap-4 "
+        initial="hidden"
+        animate="visible"
+        variants={{
+          visible: {
+            transition: {
+              staggerChildren: 0.1,
+            },
+          },
+        }}
+      >
         {loading ? (
           <ThreeDots
             height="80"
@@ -40,12 +49,15 @@ export default function Courses() {
           />
         ) : (
           courses.map((c) => (
-            <div key={c.id}>
-              <Course title={c.title} progress={c.progress} icon={c.icon_name} />{" "}
-            </div>
+            <Course
+              key={c.id}
+              title={c.title}
+              progress={c.progress}
+              icon={c.icon_name}
+            />
           ))
         )}
-      </div>
-    </motion.ul>
+      </motion.div>
+    </main>
   );
 }

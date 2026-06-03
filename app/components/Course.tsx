@@ -14,13 +14,25 @@ export default function Course({
 }) {
   //   const Icon = icon;
   return (
-    <motion.li
-      initial={{ scale: 1 }}
-      whileHover={{ scale: 1.1 }}
+    <motion.article
+       whileHover={{ scale: 1.1 }}
       transition={{
         type: "spring",
         stiffness: 300,
         damping: 20,
+      }}
+      animate={{ opacity: 1, y: 0 }}
+      variants={{
+        hidden: {
+          opacity: 0,
+          y: 20,
+          scale: 0.95,
+        },
+        visible: {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+        },
       }}
       className="relative md:block bg-neutral-primary-soft block max-w-sm p-6 border rounded-xl dark:rounded-base 
      bg-white shadow-xl shadow-gray-200/50 
@@ -47,6 +59,6 @@ export default function Course({
       <div className="mb-3 text-body">
         <ProgressBar value={progress} />
       </div>
-    </motion.li>
+    </motion.article>
   );
 }
