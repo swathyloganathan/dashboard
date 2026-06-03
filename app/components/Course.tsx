@@ -29,7 +29,7 @@ export default function Course({
             dark:hover:shadow-gray-600/30
             "
     >
-      <p className="mb-2 md:text-sm lg:text-2xl  w-max md:w-32 lg:w-80   font-semibold tracking-tight ">
+      <p className="mb-2 md:text-sm lg:text-2xl  w-max md:w-32 lg:w-80 font-semibold tracking-tight text-pretty md:text-balance ">
         {title}
       </p>
       <BookOpenCheck
