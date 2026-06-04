@@ -1,5 +1,6 @@
 "use client";
 import { X, ListCollapse, House, Library, User } from "lucide-react";
+import Link from "next/link";
 import { useState } from "react";
 const items = [
     {
@@ -7,7 +8,7 @@ const items = [
         icon:'House'
     },
     {
-        label: 'Courses',
+        label: 'ActiveCourses',
         icon:'Library'
     },
     {
@@ -37,10 +38,11 @@ export default function Sidebar() {
       <div className="grid grid-cols-1 m-2">
         {items.map((item) => {
             // const Icon = item.icon;
-            return <div className="p-2 hover:bg-gray-700 hover:rounded-sm" key={item.label}>
+            return <div className="p-2 hover:bg-gray-700 hover:rounded-sm active:bg-gray-700" key={item.label}>
             {/* <Icon size={20} /> */}
-            <div>{item.label}</div>
+            <div><Link href={`/${item.label}`}>{item.label}</Link></div>
             </div>
+           
 
 })}
       </div>
